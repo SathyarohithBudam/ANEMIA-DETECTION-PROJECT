@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anemia Classification System | Project Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-30 bg-gray-900/50 backdrop-blur-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <svg class="w-8 h-8 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10c0-4.42-3.58-8-8-8z"></path><path d="M12 2a10 10 0 0 0-10 10"></path><path d="M12 12a4 4 0 1 0 4 4c0-2.21-1.79-4-4-4z"></path></svg>
+                <span class="text-xl font-bold text-white">Anemia Classification System</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-gray-300">
+                <a href="#home" class="hover:text-white transition">Home</a>
+                <a href="#overview" class="hover:text-white transition">Overview</a>
+                <a href="#about-anemia" class="hover:text-white transition">About Anemia</a>
+                <a href="#how-it-works" class="hover:text-white transition">Methodology</a>
+                <a href="#performance" class="hover:text-white transition">Performance</a>
+                <a href="#team" class="hover:text-white transition">Team</a>
+            </nav>
+            <button id="show-test-tool-btn" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-5 rounded-full transition-transform duration-300 hover:scale-105 shadow-lg">
+                Test Your Sample
+            </button>
+        </div>
+    </header>
+
+    <main id="project-documentation">
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-content p-6">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight section-title">Automated Anemia Classification from Blood Smear Images</h1>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-300">A Deep Learning approach combining InceptionV3 and LightGBM for rapid, highly accurate diagnosis, reducing the need for manual analysis.</p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="#overview" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-transform duration-300 hover:scale-105 shadow-lg">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Overview Section -->
+        <section id="overview" class="py-24">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-white">Project Overview</h2>
+                </div>
+                <div class="max-w-4xl mx-auto glass-card p-8 md:p-12">
+                    <h3 class="text-2xl font-bold text-white mb-4">Abstract</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Anemia is a global health issue, and its diagnosis traditionally relies on manual inspection of peripheral blood smears, a process that is time-consuming, labor-intensive, and prone to human error. This project introduces an automated system for anemia classification using deep learning to overcome these limitations. We employ a hybrid model that leverages the powerful feature extraction capabilities of the InceptionV3 convolutional neural network via transfer learning, coupled with the efficiency and high performance of the LightGBM gradient boosting framework for classification. The system analyzes digital blood smear images to accurately differentiate between anemic and normal samples, demonstrating a significant potential to enhance diagnostic workflows in clinical settings by providing rapid, reliable, and objective results.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Anemia Section -->
+        <section id="about-anemia" class="py-24 bg-[#101a33]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-white">Understanding Anemia</h2>
+                </div>
+                <div class="max-w-5xl mx-auto glass-card p-8">
+                    <div class="flex mb-6 border-b border-gray-700">
+                        <button class="tab-btn flex-1 py-3 px-4 font-semibold text-gray-300" onclick="openTab(event, 'what-is-anemia')">What is Anemia?</button>
+                        <button class="tab-btn flex-1 py-3 px-4 font-semibold text-gray-300" onclick="openTab(event, 'causes')">Causes</button>
+                        <button class="tab-btn flex-1 py-3 px-4 font-semibold text-gray-300" onclick="openTab(event, 'symptoms')">Symptoms & Signs</button>
+                    </div>
+
+                    <div id="what-is-anemia" class="tab-content">
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <img src="https://placehold.co/600x400/0c1427/e0e0e0?text=Normal+vs+Anemic+Blood" alt="Normal vs Anemic blood cells" class="rounded-lg shadow-lg w-full">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white mb-4">A Lack of Healthy Red Blood Cells</h3>
+                                <p class="text-gray-300 leading-relaxed">Anemia is a medical condition where the blood lacks sufficient healthy red blood cells or hemoglobin. Hemoglobin is the protein in red blood cells that binds and transports oxygen. Without enough oxygen, the body's cells cannot function properly, leading to fatigue and other health issues.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="causes" class="tab-content">
+                         <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <img src="https://placehold.co/600x400/0c1427/e0e0e0?text=Causes+of+Anemia" alt="Foods rich in iron and vitamins" class="rounded-lg shadow-lg w-full">
+                            <div>
+                               <h3 class="text-2xl font-bold text-white mb-4">Common Causes of Anemia</h3>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                    <li><strong>Iron Deficiency:</strong> The most common cause, where the body lacks iron to produce hemoglobin.</li>
+                                    <li><strong>Vitamin Deficiencies:</strong> Lack of folate and vitamin B-12 affects red blood cell production.</li>
+                                    <li><strong>Chronic Diseases:</strong> Conditions like kidney disease, cancer, or autoimmune disorders can interfere.</li>
+                                    <li><strong>Blood Loss:</strong> Significant blood loss from injury, surgery, or internal bleeding.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="symptoms" class="tab-content">
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <img src="https://placehold.co/600x400/0c1427/e0e0e0?text=Symptoms+Illustration" alt="Person feeling fatigued" class="rounded-lg shadow-lg w-full">
+                            <div>
+                               <h3 class="text-2xl font-bold text-white mb-4">Signs and Symptoms</h3>
+                                <p class="text-gray-300 leading-relaxed mb-4">Symptoms can vary depending on severity but often include:</p>
+                                 <ul class="list-disc list-inside text-gray-300 grid grid-cols-2 gap-2">
+                                    <li>Fatigue and weakness</li>
+                                    <li>Pale or yellowish skin</li>
+                                    <li>Shortness of breath</li>
+                                    <li>Dizziness</li>
+                                    <li>Cold hands and feet</li>
+                                    <li>Headaches</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-white">Detailed Methodology</h2>
+                    <p class="mt-4 text-lg text-gray-400">Our system follows a sophisticated pipeline to ensure accurate classification.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="step-card glass-card p-6">
+                        <div class="text-4xl font-bold text-blue-400 mb-4">01</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Image Pre-processing</h3>
+                        <p class="text-gray-400">Each blood smear image is resized to a uniform 331x331 pixels and its pixel values are normalized. This standardization is crucial for consistent model input and performance.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="step-card glass-card p-6">
+                        <div class="text-4xl font-bold text-blue-400 mb-4">02</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Feature Extraction</h3>
+                        <p class="text-gray-400">We utilize InceptionV3, a state-of-the-art CNN, to analyze the images. It extracts a high-dimensional vector of features, capturing complex patterns like cell shape, size, and color.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="step-card glass-card p-6">
+                        <div class="text-4xl font-bold text-blue-400 mb-4">03</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Transfer Learning</h3>
+                        <p class="text-gray-400">The InceptionV3 model was pre-trained on the vast ImageNet dataset. We apply transfer learning to adapt this powerful, generalized knowledge specifically for blood cell analysis.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="step-card glass-card p-6">
+                        <div class="text-4xl font-bold text-blue-400 mb-4">04</div>
+                        <h3 class="text-xl font-bold text-white mb-2">LGBM Classification</h3>
+                        <p class="text-gray-400">The extracted features are fed into a LightGBM classifier. This fast and efficient model makes the final, highly accurate prediction of 'Anemia' or 'Normal'.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Performance Section -->
+        <section id="performance" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-white">Exceptional Accuracy</h2>
+                    <p class="mt-4 text-lg text-gray-400">Our proposed InceptionV3 + LightGBM model significantly outperforms traditional methods.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="w-full h-96 glass-card p-6">
+                        <canvas id="accuracyChart"></canvas>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="stat-card">
+                            <h4 class="text-4xl font-bold text-green-400">98.6%</h4>
+                            <p class="text-gray-300 mt-2">Precision</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 class="text-4xl font-bold text-green-400">98.5%</h4>
+                            <p class="text-gray-300 mt-2">Recall</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 class="text-4xl font-bold text-green-400">98.5%</h4>
+                            <p class="text-gray-300 mt-2">F1-Score</p>
+                        </div>
+                        <div class="stat-card">
+                             <h4 class="text-4xl font-bold text-green-400">98.8%</h4>
+                            <p class="text-gray-300 mt-2">Overall Accuracy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-24 bg-[#101a33]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl section-title text-white">Project Team</h2>
+                    <p class="mt-4 text-lg text-gray-400">This project was developed by a dedicated team of students.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="glass-card p-6">
+                        <h3 class="text-xl font-bold text-white">B.SATHYA ROHITH</h3>
+                    </div>
+                     <div class="glass-card p-6">
+                        <h3 class="text-xl font-bold text-white">D.KARTHIKEYA</h3>
+                    </div>
+                     <div class="glass-card p-6">
+                        <h3 class="text-xl font-bold text-white">A.SAI SRUJAN</h3>
+                    </div>
+                     <div class="glass-card p-6">
+                        <h3 class="text-xl font-bold text-white">G.ARAVIND</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Analysis Tool Section -->
+    <div id="analysis-tool" class="hidden min-h-screen w-full flex-col items-center justify-center p-4 fixed inset-0 z-40 bg-gray-900/80 backdrop-blur-md">
+        <button id="close-test-tool-btn" class="absolute top-6 right-6 text-white z-50">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41z"/></svg>
+        </button>
+        <div id="tool-main-card" class="w-full max-w-2xl glass-card p-8 shadow-2xl space-y-6 fade-in">
+             <!-- Content is now populated by JS -->
+        </div>
+        <div id="tool-result-card" class="hidden w-full max-w-md glass-card rounded-2xl p-8 shadow-2xl text-center">
+             <!-- Content is now populated by JS -->
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
